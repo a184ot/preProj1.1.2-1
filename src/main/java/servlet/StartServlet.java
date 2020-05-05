@@ -28,11 +28,7 @@ public class StartServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            userService.createTable();
-        } catch (DBException e) {
-            e.printStackTrace();
-        }
+        userService.createTable();
         List<User> listUser = userService.getAllUsers();
         request.setAttribute("listUser", listUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");

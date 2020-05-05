@@ -51,6 +51,9 @@ public class UserServlet extends HttpServlet {
                 case "/update":
                     updateUser(request, response);
                     break;
+                    case "/drop":
+                    dropUser(request,response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -109,6 +112,13 @@ public class UserServlet extends HttpServlet {
             throws SQLException, IOException {
         Long id = Long.valueOf(request.getParameter("id"));
         userService.deleteUser(id);
+        response.sendRedirect("list");
+    }
+
+    private void dropUser(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+        userService.dropTable();
+        userService.createTable();
         response.sendRedirect("list");
     }
 }

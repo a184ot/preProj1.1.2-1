@@ -61,19 +61,19 @@ public class UserService {
     }
 
 
-    public static void dropTable() throws DBException {
+    public void dropTable() {
         try {
             getUserDAO().dropTable();
         } catch (SQLException e) {
-            throw new DBException(e);
+
         }
     }
 
-    public void createTable() throws DBException {
+    public void createTable()  {
         try {
             getUserDAO().createTable();
         } catch (SQLException e) {
-            throw new DBException(e);
+
         }
     }
 

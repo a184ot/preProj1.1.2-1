@@ -52,7 +52,6 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-<%--                        <input type="submit" value="Save"/>--%>
                         <button onclick="location.href='Save'" ;>Save New User</button>
                     </td>
                 </tr>
@@ -64,6 +63,8 @@
         <button onclick="location.href='new'" ;>Add New User</button>
         &nbsp;&nbsp;&nbsp;
         <button onclick="location.href='list'" ;>List All Users</button>
+        &nbsp;&nbsp;&nbsp;
+        <button onclick="location.href='drop'" ;>Delete All Users</button>
     </h2>
 </div>
 </body>
