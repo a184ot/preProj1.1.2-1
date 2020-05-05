@@ -19,12 +19,6 @@ public class UserService {
 
     UserDAO dao = getUserDAO();
 
-    public void updateUserA(User user) throws SQLException {
-        updateUserName(user.getId(), user.getName());
-        updateUserAge(user.getId(), user.getAge());
-        updateUserEmail(user.getId(), user.getEmail());
-    }
-
     public void updateUser(User user) throws SQLException {
         userDAO.updateUser(user);
     }
