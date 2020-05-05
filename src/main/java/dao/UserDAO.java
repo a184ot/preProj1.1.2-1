@@ -54,6 +54,15 @@ public class UserDAO {
             stmt.executeUpdate();
         }
     }
+    public void updateUser(User user) throws SQLException {
+        try (PreparedStatement stmt = connection.prepareStatement("update user_tab set name=? , age=? , email=? where id=?")) {
+            stmt.setString(1, user.getName());
+            stmt.setLong(2,user.getAge());
+            stmt.setString(3,user.getEmail());
+            stmt.setLong(4, user.getId());
+            stmt.executeUpdate();
+        }
+    }
 
     public User getUserById(long id) throws SQLException {
         try (Statement stmt = connection.createStatement()) {
