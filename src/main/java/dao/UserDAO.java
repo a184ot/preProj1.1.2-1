@@ -15,7 +15,6 @@ public class UserDAO {
     }
 
 
-
     public List<User> getAllUsers() throws SQLException {
         List<User> list = new ArrayList<>();
         try (Statement stmt = connection.createStatement()) {
@@ -104,7 +103,7 @@ public class UserDAO {
             ResultSet result = stmt.getResultSet();
             result.next();
             return result.first();
-        } catch (SQLException d){
+        } catch (SQLException d) {
             return false;
         }
     }
@@ -116,7 +115,7 @@ public class UserDAO {
             result.next();
             Long res = result.getLong(1);
             long money = result.getLong("money");
-            res = res+0L;
+            res = res + 0L;
             return money >= expectedSum;
         }
     }

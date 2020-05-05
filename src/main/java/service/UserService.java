@@ -98,7 +98,7 @@ public class UserService {
         }
     }
 
-    public static void createTable() throws DBException {
+    public void createTable() throws DBException {
         try {
             getUserDAO().createTable();
         } catch (SQLException e) {
